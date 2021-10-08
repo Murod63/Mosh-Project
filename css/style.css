@@ -13,6 +13,7 @@ html {
   margin: 0;
   padding: 0;
 }
+/* * Define the color palette */
 :root {
   --color-primary: #2584ff;
   --color-secondary: #00d9ff;
