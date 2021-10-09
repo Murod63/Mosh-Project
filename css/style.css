@@ -295,6 +295,17 @@ a {
   margin-bottom: 2rem;
   letter-spacing: 0.8px;
 }
+.plan--popular {
+  position: relative;
+}
+.plan--popular::before {
+  content: url(../img/popular.svg);
+  width: 40px;
+  display: inline-block;
+  position: absolute;
+  top: -5px;
+  right: 8%;
+}
 @media screen and (min-width: 1024px) {
   .plan__name {
     font-size: 1.4rem;
