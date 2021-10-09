@@ -35,7 +35,7 @@ body {
 h1,
 h2,
 h3 {
-  color: var(--color-heading);
+  color: var(--color-headings);
   margin-bottom: 1rem;
 }
 
@@ -319,4 +319,16 @@ a {
   .plan__discription {
     font-size: 1.7rem;
   }
+}
+
+/* * Media */
+.media {
+  display: flex;
+}
+
+.media__body {
+  margin: 0 2rem;
+}
+.media__image {
+  margin-top: 1rem;
 }
