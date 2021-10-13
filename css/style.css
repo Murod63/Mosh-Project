@@ -14,7 +14,9 @@ html {
   margin: 0;
   padding: 0;
 }
+
 /* * Define the color palette */
+
 :root {
   --color-primary: #2584ff;
   --color-secondary: #00d9ff;
@@ -27,13 +29,20 @@ html {
   --border-radius: 40px;
 }
 
+::selection {
+  background: var(--color-primary);
+  color: white;
+}
+
 body {
   font-family: "Inter", Arial, Helvetica, sans-serif;
   color: var(--color-body);
   font-size: 2.4rem;
   line-height: 1.5;
 }
+
 /* * Typography */
+
 h1,
 h2,
 h3 {
@@ -50,6 +59,7 @@ h2 {
 }
 h3 {
   font-size: 3rem;
+  font-weight: 500;
 }
 
 p {
@@ -71,6 +81,7 @@ p {
 }
 
 /* * Links */
+
 a {
   text-decoration: none;
 }
@@ -118,10 +129,10 @@ a {
 }
 
 /* * Lists */
+
 .list {
   list-style: none;
   padding-left: 0;
-  color: var(--color-headings);
 }
 
 .list--inline .list__item {
@@ -132,6 +143,7 @@ a {
 .list--tick {
   list-style-image: url(../img/tick.svg);
   padding-left: 3rem;
+  color: var(--color-headings);
 }
 
 .list--tick .list__item {
@@ -145,6 +157,7 @@ a {
 }
 
 /* * Icons */
+
 .icon {
   width: 40px;
   height: 40px;
@@ -175,6 +188,7 @@ a {
 }
 
 /* * Buttons */
+
 .btn {
   border-radius: 40px;
   border: 0;
@@ -240,6 +254,7 @@ a {
     font-size: 1.5rem;
   }
 }
+
 /* * Inputs */
 
 .input {
@@ -274,10 +289,11 @@ a {
 }
 
 /* * Cards */
+
 .card {
   border-radius: 7px;
   box-shadow: 0 0 20px 10px #f3f3f3;
-  overflow: hidden;
+  /*& overflow: hidden; */
 }
 .card__header,
 .card__body {
@@ -363,8 +379,10 @@ a {
 }
 
 /* * Media */
+
 .media {
   display: flex;
+  margin-bottom: 2rem;
 }
 .media__title {
   margin-top: 0;
@@ -376,7 +394,9 @@ a {
 .media__image {
   margin-top: 1rem;
 }
+
 /* * Quotes */
+
 .quote {
   font-size: 3rem;
   font-style: italic;
@@ -420,7 +440,9 @@ a {
     font-size: 1.6rem;
   }
 }
+
 /* * Grids */
+
 .grid {
   display: grid;
 }
@@ -436,6 +458,7 @@ a {
 }
 
 /* * Testimonial */
+
 .testimonial {
   padding: 3rem;
 }
@@ -468,6 +491,7 @@ a {
 }
 
 /* * Callouts */
+
 .callout {
   padding: 4rem;
   border-radius: 5px;
@@ -500,6 +524,7 @@ a {
   }
 }
 /* * Collapsibles */
+
 .collapsible__header {
   display: flex;
   justify-content: space-between;
@@ -526,12 +551,14 @@ a {
   opacity: 1;
 }
 /* * Blocks */
+
 .block {
   --padding-vertical: 6rem;
   padding: var(--padding-vertical) 2rem;
 }
 .block__header {
   text-align: center;
+  margin-bottom: 4rem;
 }
 .block__heading {
   margin-top: 0;
@@ -541,22 +568,26 @@ a {
   background: black;
   color: #7b858b;
 }
-.block--dark .block__heading {
+.block--dark h1,
+.block--dark h2,
+.block--dark h3 {
   color: white;
 }
 .block--skewed-right {
   padding-bottom: calc(var(--padding-vertical) + 4rem);
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 80%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 90%);
 }
 .block--skewed-left {
   padding-bottom: calc(var(--padding-vertical) + 4rem);
-  clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
 }
 .container {
   max-width: 1140px;
   margin: 0 auto;
 }
+
 /* * Navigation Bar */
+
 .nav {
   background: black;
   display: flex;
@@ -607,10 +638,9 @@ a {
     border: 0;
   }
 }
+
 /* * Hero */
-.hero {
-  clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
-}
+
 .hero__tagline {
   font-size: 2rem;
   color: #b9c3cf;
@@ -631,6 +661,7 @@ a {
 }
 
 /* * Domain Block */
+
 .block-domain .input-group {
   box-shadow: 0 0 30px 20px #e6ebee;
   border: 0;
@@ -651,6 +682,7 @@ a {
   }
 }
 /* * Plans Block */
+
 .block-plans .grid {
   gap: 8rem 4rem;
 }
@@ -658,7 +690,9 @@ a {
   max-width: 500px;
   margin: 0 auto;
 }
+
 /* * Features */
+
 .feature {
   gap: 4rem 2rem;
   margin: 5rem 0;
@@ -676,5 +710,26 @@ a {
 @media screen and (min-width: 768px) {
   .feature-main:nth-of-type(even) .feature__content {
     order: 2;
+  }
+}
+
+/* * Showcase Block */
+
+.block-showcase__image > img {
+  width: 100%;
+}
+.showcase-content {
+  padding: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .block-showcase .grid {
+    grid-template-columns: 50% 50%;
+  }
+  .block-showcase__image {
+    justify-self: end;
+  }
+  .block-showcase__image > img {
+    width: auto;
+    max-width: 700px;
   }
 }
