@@ -1,6 +1,4 @@
 html {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   font-size: 62.5%;
 }
@@ -8,8 +6,6 @@ html {
 *,
 *:before,
 *:after {
-  -webkit-box-sizing: inherit;
-  -moz-box-sizing: inherit;
   box-sizing: inherit;
   margin: 0;
   padding: 0;
@@ -111,7 +107,7 @@ a {
   border-radius: 20px;
   padding: 0.5rem 2rem;
   font-weight: bold;
-  word-spacing: nowrap;
+  /* word-spacing: nowrap; */
   font-size: 2rem;
 }
 .badge--primary {
